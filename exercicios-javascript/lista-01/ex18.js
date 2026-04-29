@@ -1,0 +1,18 @@
+const prompt = require('prompt-sync')();
+console.log("=== Apuração de Votos em uma Eleição Sindical ===");
+let V1 = Number(prompt("Digite a quantidade de votos do candidato 1: "));
+let V2 = Number(prompt("Digite a quantidade de votos do candidato 2: "));
+let V3 = Number(prompt("Digite a quantidade de votos do candidato 3: "));
+let VN = Number(prompt("Digite a quantidade de votos nulos: "));
+let VB = Number(prompt("Digite a quantidade de votos em branco: "));
+let TV = V1 + V2 + V3 + VN + VB;
+let PV1 = (V1 / TV) * 100;
+let PV2 = (V2 / TV) * 100;
+let PV3 = (V3 / TV) * 100;
+let PVN = (VN / TV) * 100;
+let PVB = (VB / TV) * 100;
+console.log(`O candidato 1 recebeu ${PV1.toFixed(2)}% dos votos.`);
+console.log(`O candidato 2 recebeu ${PV2.toFixed(2)}% dos votos.`);
+console.log(`O candidato 3 recebeu ${PV3.toFixed(2)}% dos votos.`);
+console.log(`Os votos nulos representaram ${PVN.toFixed(2)}% do total de votos.`);
+console.log(`Os votos em branco representaram ${PVB.toFixed(2)}% do total de votos.`);
